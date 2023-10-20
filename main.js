@@ -6,9 +6,11 @@ async function main(){
         process.exit(1)
     }
     const baseurl = process.argv[2]
-    console.log(`crawling ${baseurl}`)
-    await crawlPage(baseurl)
-
+    const pages = await crawlPage(baseurl,baseurl,{})
+    
+   for(const p of Object.entries(pages)){
+    console.log(p)
+   }
 }
 
 main()
